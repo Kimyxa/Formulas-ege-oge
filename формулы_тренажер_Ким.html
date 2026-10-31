@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Формулы ЕГЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F7FB;--grid:#E3E6F2;--ink:#1D2552;--mut:#6A7096;--card:#fff;--line:#D5D9EA;--pri:#3B4CCA;--prid:#2B38A0;--onpri:#fff;--ok:#1F9D6B;--okd:#167A53;--okbg:#DDF5EA;--bad:#E5484D;--badd:#B8343A;--badbg:#FDE3E4;--gold:#F2B600;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12162E;--grid:#1C2142;--ink:#EEF0FF;--mut:#9AA1CF;--card:#1B2145;--line:#323A6E;--pri:#6B7BFF;--prid:#4655D6;--onpri:#10143A;--ok:#38C48B;--okd:#22966A;--okbg:#143D33;--bad:#FF6B70;--badd:#D14A4F;--badbg:#45202B;--gold:#FFD84D;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12162E;--grid:#1C2142;--ink:#EEF0FF;--mut:#9AA1CF;--card:#1B2145;--line:#323A6E;--pri:#6B7BFF;--prid:#4655D6;--onpri:#10143A;--ok:#38C48B;--okd:#22966A;--okbg:#143D33;--bad:#FF6B70;--badd:#D14A4F;--badbg:#45202B;--gold:#FFD84D;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{background:var(--bg) linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px;color:var(--ink);font:600 16px/1.4 Nunito,system-ui,sans-serif;background-color:var(--bg)}
+#app{max-width:480px;margin:0 auto;padding:16px 16px 40px}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.fm,.prompt,.opt,.ic{font-family:"Cambria Math","STIX Two Math","Noto Serif",Georgia,serif}
+header{display:flex;justify-content:space-between;align-items:center;gap:8px}
+h1{font-size:28px;font-weight:900;margin:0}
+h2{font-size:20px;font-weight:900;margin:24px 0 12px}
+.chips{display:flex;gap:8px}
+.chips span{background:var(--card);border:2px solid var(--line);border-radius:999px;padding:4px 12px;font-weight:800}
+.sub{color:var(--mut);margin:6px 0 20px}
+.topic{display:flex;align-items:center;gap:14px;width:100%;margin-bottom:12px;padding:12px 14px;text-align:left;background:var(--card);border:2px solid var(--line);border-bottom-width:5px;border-radius:18px}
+.topic:active{transform:translateY(2px);border-bottom-width:3px}
+.ic{flex:none;width:56px;height:56px;border-radius:50%;background:var(--pri);color:var(--onpri);display:grid;place-items:center;font-size:19px;font-weight:700}
+.tx{flex:1;display:flex;flex-direction:column}
+.tx b{font-size:18px;font-weight:900}
+.tx small{color:var(--mut);font-weight:700}
+.st{color:var(--gold);font-size:20px;letter-spacing:1px}
+.top{display:flex;align-items:center;gap:12px}
+.x{background:none;border:0;font-size:22px;color:var(--mut);padding:6px}
+.bar{flex:1;height:14px;background:var(--line);border-radius:9px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok);border-radius:9px;transition:width .3s}
+.hp{color:var(--bad);font-weight:900;font-size:18px}
+.prompt{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:22px 16px;font-size:26px;font-weight:700;text-align:center;margin-bottom:18px;overflow-wrap:anywhere}
+.slot{min-height:76px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:12px;margin-bottom:18px;background:var(--card);border:2px dashed var(--line);border-radius:16px}
+.slot.ok{border-color:var(--ok);background:var(--okbg)}
+.slot.bad{border-color:var(--bad);background:var(--badbg);animation:shake .35s}
+.ph{color:var(--mut)}
+.bank{display:flex;flex-wrap:wrap;gap:10px;padding-bottom:170px}
+.tk{font:700 20px "Cambria Math","STIX Two Math","Noto Serif",Georgia,serif;color:var(--ink);background:var(--card);border:2px solid var(--line);border-bottom-width:5px;border-radius:14px;padding:8px 14px;min-height:46px}
+.tk.ghost{display:inline-block;background:var(--line);border-color:var(--line);color:transparent;user-select:none}
+.slot .tk{border-color:var(--pri)}
+.go:disabled{opacity:.45}
+.new{color:var(--pri);font-weight:900}
+.fb{position:fixed;left:0;right:0;bottom:0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));border-top:2px solid}
+.fb.ok{background:var(--okbg);border-color:var(--ok)}
+.fb.bad{background:var(--badbg);border-color:var(--bad)}
+.fb>div{max-width:480px;margin:0 auto}
+.fb p{margin:0 0 12px;font-weight:800}
+.fb.ok p{color:var(--okd)}
+.fb.bad p{color:var(--badd)}
+.go{display:block;width:100%;padding:14px;border:0;border-bottom:5px solid var(--prid);border-radius:16px;background:var(--pri);color:var(--onpri);font-weight:900;font-size:17px}
+.fb.ok .go{background:var(--ok);border-bottom-color:var(--okd)}
+.fb.bad .go{background:var(--bad);border-bottom-color:var(--badd)}
+.go.alt{background:var(--card);color:var(--pri);border:2px solid var(--line);border-bottom-width:5px;margin-top:10px}
+.end{text-align:center;padding-top:48px}
+.end .big{font-size:56px;color:var(--gold);letter-spacing:4px}
+.end h2{font-size:26px}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@media (prefers-reduced-motion:reduce){.slot.bad{animation:none}.bar i{transition:none}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+const T=[
+{id:"deg",n:"Степени и логарифмы",s:"log",q:[
+"aᵐ · aⁿ|a_ᵐ_⁺_ⁿ","aᵐ / aⁿ|a_ᵐ_⁻_ⁿ","(aᵐ)ⁿ|a_ᵐ_ⁿ","ⁿ√a|a_^(1/n)",
+"logₐ(bc)|logₐ b_+_logₐ c~logₐ c_+_logₐ b","logₐ(b / c)|logₐ b_−_logₐ c","logₐ bᵏ|k_·_logₐ b","logₐ b (переход к основанию c)|log_c b_/_log_c a",
+"√(ab)|√a_·_√b","√(a / b)|√a_/_√b","(ab)ⁿ|a_ⁿ_b_ⁿ","(a / b)ⁿ|a_ⁿ_/_b_ⁿ","log_(aᵏ) b|1_/_k_·_logₐ b"]},
+{id:"alg",n:"Алгебра",s:"D",q:[
+"(a + b)²|a²_+_2ab_+_b²","(a − b)²|a²_−_2ab_+_b²","a² − b²|(a − b)_(a + b)~(a + b)_(a − b)","a³ − b³|(a − b)_(a² + ab + b²)",
+"D (дискриминант)|b²_−_4ac","Корни ax² + bx + c = 0|(−b ± √D)_/_2a","Виета: x₁ + x₂|−b_/_a","Виета: x₁ · x₂|c_/_a"]},
+{id:"trig",n:"Тригонометрия",s:"sin",q:[
+"tg α|sin α_/_cos α","1 + tg²α|1_/_cos²α","sin 2α|2_sin α_cos α~2_cos α_sin α","cos 2α|cos²α_−_sin²α","cos 2α (через sin)|1_−_2_sin²α",
+"sin(α + β)|sin α_cos β_+_cos α_sin β~cos α_sin β_+_sin α_cos β","cos(α + β)|cos α_cos β_−_sin α_sin β","cos(π − α)|−_cos α",
+"sin(π / 2 − α)|cos_α","sin(π − α)|sin_α","sin(−α)|−_sin_α","cos(−α)|cos_α","tg(π + α)|tg_α","sin²α|1_−_cos²α","cos²α (через cos 2α)|(1 + cos 2α)_/_2","sin²α (через cos 2α)|(1 − cos 2α)_/_2","Период sin x и cos x|2_π"]},
+{id:"treq",n:"Тригонометрические уравнения",s:"arcsin",q:[
+"sin x = a|x_=_(−1)ⁿ_arcsin a_+_πn","cos x = a|x_=_±_arccos a_+_2πn","tg x = a|x_=_arctg a_+_πn","arccos(−a)|π_−_arccos a"]},
+{id:"der",n:"Производные",s:"f′",q:[
+"(xⁿ)′|n_x_ⁿ_⁻¹","(√x)′|1_/_2√x","(ln x)′|1_/_x","(sin x)′|cos_x","(cos x)′|−_sin_x","(tg x)′|1_/_cos²x",
+"(u · v)′|u′v_+_uv′","(u / v)′|(u′v − uv′)_/_v²"]},
+{id:"prog",n:"Прогрессии",s:"aₙ",q:[
+"aₙ (арифметическая)|a₁_+_(n − 1)d","Sₙ (арифметическая)|(a₁ + aₙ)_/_2_·_n","bₙ (геометрическая)|b₁_·_qⁿ⁻¹",
+"Sₙ (геометрическая)|b₁_(qⁿ − 1)_/_(q − 1)","S бесконечно убывающей геометрической|b₁_/_(1 − q)"]},
+{id:"plan",n:"Планиметрия",s:"△",q:[
+"c² (теорема Пифагора)|a²_+_b²","Теорема косинусов: c²|a²_+_b²_−_2ab cos C","Теорема синусов: a / sin A|2_R",
+"S треугольника (две стороны и угол)|½_ab sin C","S треугольника через r|p_·_r","S треугольника через R|abc_/_4R","S трапеции|(a + b)_/_2_·_h"]},
+{id:"vec",n:"Координаты и векторы",s:"→",q:[
+"∣a∣, a = (x; y; z)|√_(x² + y² + z²)","Скалярное произведение a · b|x₁x₂_+_y₁y₂_+_z₁z₂","cos φ между векторами a и b|a · b_/_(∣a∣ · ∣b∣)","Середина отрезка AB, координата x|(x₁ + x₂)_/_2"]},
+{id:"ster",n:"Стереометрия",s:"V",q:[
+"V пирамиды|⅓_·_S_·_h","V цилиндра|π_R²_h","V конуса|⅓_π_R²_h","V шара|4/3_π_R³","S сферы|4_π_R²","Диагональ прямоугольного параллелепипеда|√_(a² + b² + c²)"]},
+{id:"prob",n:"Вероятность и комбинаторика",s:"Cₙᵏ",q:[
+"P(A), классическое определение|m_/_n","P(не A)|1_−_P(A)","P(A + B), несовместные|P(A)_+_P(B)","P(A + B), совместные|P(A)_+_P(B)_−_P(AB)",
+"P(AB), независимые|P(A)_·_P(B)","Aₙᵏ (размещения)|n!_/_(n − k)!","Cₙᵏ (сочетания)|n!_/_(k!(n − k)!)",
+"Cₙᵏ (симметрия)|Cₙ_ⁿ⁻ᵏ","Условная вероятность P(A∣B)|P(AB)_/_P(B)","P(хотя бы одно из двух независимых событий), P(A) = p₁, P(B) = p₂|1_−_(1 − p₁)_(1 − p₂)"]},
+{id:"rv",n:"Случайные величины",s:"M(X)",nw:1,q:[
+"M(X), математическое ожидание|x₁p₁_+_x₂p₂_+_…_+_xₙpₙ","D(X), дисперсия|M(X²)_−_(M(X))²","σ(X), стандартное отклонение|√_D(X)",
+"M(aX + b)|a_M(X)_+_b","D(aX + b)|a²_D(X)","M(X + Y)|M(X)_+_M(Y)","D(X + Y), X и Y независимы|D(X)_+_D(Y)","M(X), биномиальное распределение|n_p"]},
+{id:"val",n:"Значения и определения",s:"30°",q:[
+"sin 30°|1_/_2","sin 45°|√2_/_2","sin 60°|√3_/_2","cos 30°|√3_/_2","cos 45°|√2_/_2","cos 60°|1_/_2","tg 30°|1_/_√3","Перевод градусов в радианы: α°|α_·_π_/_180",
+"sin A в прямоугольном треугольнике (a — противолежащий катет, c — гипотенуза)|a_/_c","cos A (b — прилежащий катет, c — гипотенуза)|b_/_c","tg A (a — противолежащий, b — прилежащий катет)|a_/_b","ctg α|cos α_/_sin α"]},
+{id:"area",n:"Площади и углы",s:"S",q:[
+"S параллелограмма (сторона и высота)|a_·_h","S параллелограмма (две стороны и угол)|a_b_sin α","S ромба через диагонали|d₁_d₂_/_2","S ромба (сторона и угол)|a²_sin α","S круга|π_R²",
+"S правильного треугольника со стороной a|a²_√3_/_4","Высота правильного треугольника со стороной a|a_√3_/_2","Длина дуги окружности (угол n°)|π_R_n_/_180",
+"R окружности, описанной около прямоугольного треугольника|c_/_2","r окружности, вписанной в прямоугольный треугольник|(a + b − c)_/_2","Сумма внутренних углов выпуклого n-угольника|180°_(n − 2)",
+"Вписанный угол, опирающийся на дугу|½_·_дуга","Описанный четырёхугольник: a + c|b_+_d","Средняя линия трапеции|(a + b)_/_2"]},
+{id:"vol",n:"Объёмы и поверхности",s:"V",q:[
+"V призмы|S_·_h","V прямоугольного параллелепипеда|a_b_c","V куба|a_³","Диагональ куба|a_√3","S полной поверхности куба|6_a²","S боковой поверхности цилиндра|2_π_R_h","S полной поверхности цилиндра|2_π_R_(R + h)",
+"S боковой поверхности конуса|π_R_l","Образующая конуса l²|R²_+_h²","S поверхности прямоугольного параллелепипеда|2_(ab + bc + ac)","Отношение объёмов подобных тел (коэффициент подобия k)|k_³","Отношение площадей подобных фигур (коэффициент k)|k_²"]},
+{id:"eq",n:"Уравнения",s:"x=",q:[
+"aᶠ⁽ˣ⁾ = aᵍ⁽ˣ⁾ (a > 0, a ≠ 1) равносильно|f(x)_=_g(x)","logₐ x = b|x_=_aᵇ","√f(x) = a, где a ≥ 0|f(x)_=_a²","∣x∣ = a, где a > 0|x_=_±_a","ОДЗ логарифма logₐ f(x)|f(x)_>_0",
+"Корни ax² + bx + c = 0 при b = 2k|(−k ± √(k² − ac))_/_a","sin x = 0|x_=_πn","cos x = 0|x_=_π_/_2_+_πn","sin x = 1|x_=_π_/_2_+_2πn","cos x = 1|x_=_2πn"]},
+{id:"fun",n:"Функции и первообразная",s:"F(x)",q:[
+"Функция возрастает, если|f′(x)_>_0","Функция убывает, если|f′(x)_<_0","(aˣ)′|aˣ_ln a","(1 / x)′|−_1_/_x²","(logₐ x)′|1_/_(x ln a)","Первообразная F(x) для xⁿ|x_ⁿ_⁺¹_/_(n + 1)","Первообразная для sin x|−_cos x","Первообразная для cos x|sin_x",
+"Формула Ньютона — Лейбница: интеграл от a до b функции f(x)dx|F(b)_−_F(a)","Угловой коэффициент прямой через (x₁; y₁) и (x₂; y₂)|(y₂ − y₁)_/_(x₂ − x₁)","Абсцисса вершины параболы y = ax² + bx + c|−b_/_2a"]},
+{id:"txt",n:"Текстовые задачи",s:"v·t",q:[
+"Скорость v (путь S, время t)|S_/_t","Путь S при скорости v|v_·_t","Скорость лодки по течению (v — собственная, u — течения)|v_+_u","Скорость лодки против течения|v_−_u","Время встречи при движении навстречу (расстояние S)|S_/_(v₁ + v₂)",
+"Работа A при производительности p и времени t|p_·_t","Время совместной работы (производительности p₁ и p₂, вся работа = 1)|1_/_(p₁ + p₂)","p% от числа x|p_/_100_·_x","Увеличение числа x на p%|x_(1 + p / 100)","Уменьшение числа x на p%|x_(1 − p / 100)",
+"Среднее арифметическое n чисел|(x₁ + x₂ + … + xₙ)_/_n","Средняя скорость|весь путь_/_всё время"]},
+{id:"model",n:"Моделирование и проценты",s:"I=U/R",nw:1,q:[
+"Закон Ома: I|U_/_R","Мощность тока P|U_·_I","Закон Джоуля — Ленца: Q|I²_R_t","Путь при равноускоренном движении s|v₀_t_+_a_t²_/_2",
+"Сложный процент: сумма через n лет|S₀_(1 + p / 100)_ⁿ","Аннуитетный платёж x, где r = 1 + p / 100|S_rⁿ_(r − 1)_/_(rⁿ − 1)"]}
+];
+const $=s=>document.querySelector(s);
+let S={xp:0,streak:0,day:"",stars:{}};
+try{const r=localStorage.getItem("ege-formulas");if(r)S=Object.assign(S,JSON.parse(r))}catch(e){}
+const save=()=>{try{localStorage.setItem("ege-formulas",JSON.stringify(S))}catch(e){}};
+const sh=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const day=d=>new Date(Date.now()-d*864e5).toISOString().slice(0,10);
+const stars=n=>"★".repeat(n)+"☆".repeat(3-n);
+const J=a=>a.reduce((s,t)=>s+(s&&!/^[²³¹ⁿᵐᵏ⁰-⁹⁺⁻₀-₉ₙₐ′^]/.test(t)?" ":"")+t,"");
+let L;
+
+function home(){
+  const st=(S.day===day(0)||S.day===day(1))?S.streak:0;
+  $("#app").innerHTML=`<header><h1>Формулы ЕГЭ</h1><div class="chips"><span>🔥 ${st}</span><span>★ ${S.xp}</span></div></header>
+  <p class="sub">Профильная математика, ЕГЭ-2027. Собирай формулы по частям, в уроке до 8 случайных формул темы.</p>`+
+  T.map((t,i)=>`<button class="topic" onclick="start(${i})"><span class="ic">${t.s}</span><span class="tx"><b>${t.n}</b><small>${t.q.length} формул${t.nw?' · <span class="new">новое в 2027</span>':""}</small></span><span class="st">${stars(S.stars[t.id]||0)}</span></button>`).join("");
+}
+
+function start(i){
+  const t=T[i];
+  L={i,t,queue:sh(t.q.map(x=>{const f=x.split("|");return{p:f[0],a:f[1].split("~").map(s=>s.split("_"))}})).slice(0,8),
+  pool:[...new Set(t.q.flatMap(x=>x.split("|")[1].split(/[~_]/)))],total:Math.min(8,t.q.length),done:0,hearts:3};
+  ask();
+}
+
+function ask(){
+  if(!L.queue.length)return win();
+  const it=L.queue[0],all=it.a.flat();
+  L.chips=sh(it.a[0].concat(sh(L.pool.filter(t=>!all.includes(t))).slice(0,2)));
+  L.sel=[];L.locked=false;
+  $("#app").innerHTML=`<div class="top"><button class="x" onclick="home()" aria-label="Выйти из урока">✕</button><div class="bar"><i style="width:${L.done/L.total*100}%"></i></div><span class="hp">♥ ${L.hearts}</span></div>
+  <h2>Собери формулу</h2><div class="prompt">${it.p} =</div><div class="slot" id="slot"></div><div class="bank" id="bank"></div><div id="fb"></div>`;
+  draw();
+}
+
+function draw(){
+  $("#slot").innerHTML=L.sel.map((c,k)=>`<button class="tk" onclick="del(${k})">${L.chips[c]}</button>`).join("")||'<span class="ph">Нажимай на части формулы ниже</span>';
+  $("#bank").innerHTML=L.chips.map((t,i)=>L.sel.includes(i)?`<span class="tk ghost">${t}</span>`:`<button class="tk" onclick="add(${i})">${t}</button>`).join("");
+  $("#fb").innerHTML=L.locked?$("#fb").innerHTML:`<div class="fb" style="background:var(--bg);border-color:var(--line)"><div><button class="go" onclick="check()" ${L.sel.length?"":"disabled"}>Проверить</button></div></div>`;
+}
+function add(i){if(!L.locked){L.sel.push(i);draw()}}
+function del(k){if(!L.locked){L.sel.splice(k,1);draw()}}
+
+function check(){
+  if(L.locked||!L.sel.length)return;L.locked=true;
+  const it=L.queue[0],got=L.sel.map(c=>L.chips[c]);
+  const ok=it.a.some(a=>a.length===got.length&&a.every((t,i)=>t===got[i]));
+  $("#slot").classList.add(ok?"ok":"bad");
+  if(ok){L.queue.shift();L.done++}
+  else{L.hearts--;L.queue.push(L.queue.shift());document.querySelector(".hp").textContent="♥ "+L.hearts}
+  $("#fb").innerHTML=`<div class="fb ${ok?"ok":"bad"}"><div><p>${ok?"Верно!":"Правильно так: "+it.p+" = "+J(it.a[0])}</p><button class="go" onclick="next()">Дальше</button></div></div>`;
+  $(".fb .go").focus();
+}
+
+function next(){L.hearts<=0?lose():ask()}
+
+function win(){
+  const gain=10+L.hearts*5,id=L.t.id;
+  S.xp+=gain;S.stars[id]=Math.max(S.stars[id]||0,L.hearts);
+  if(S.day!==day(0)){S.streak=S.day===day(1)?S.streak+1:1;S.day=day(0)}
+  save();
+  $("#app").innerHTML=`<div class="end"><div class="big">${stars(L.hearts)}</div><h2>Тема пройдена!</h2><p>+${gain} очков · ${L.t.n}</p>
+  <button class="go" onclick="home()">К темам</button><button class="go alt" onclick="start(${L.i})">Ещё раз</button></div>`;
+}
+
+function lose(){
+  $("#app").innerHTML=`<div class="end"><div class="big" style="color:var(--bad)">♥ 0</div><h2>Сердца закончились</h2><p>Повтори формулы и попробуй ещё раз.</p>
+  <button class="go" onclick="start(${L.i})">Попробовать снова</button><button class="go alt" onclick="home()">К темам</button></div>`;
+}
+home();
+</script>
+</body>
+</html>
